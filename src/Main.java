@@ -2,18 +2,25 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("Hello world!");
-//    String[] res= subString("VOMY");
-//        System.out.println(Arrays.toString(res));
-    String str= 1+"";
-        System.out.println(str.charAt(0));
+    String s1 = "jav";
+    String s2 = "va";
+        System.out.println(isFfound(s1,s2));
+    }
+    public static boolean isFfound(String key, String s) {
+        int count=0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            for (int j = 0; j < key.length(); j++) {
+                if(key.charAt(j)==c){
+                    count++;
+                }
+            }
+        }
+        if(count==s.length()){
+            return true;
+        }
+        return false;
     }
 
-    static String[] subString(String s1){
-        String[] arr= new String[s1.length()];
-        for(int i =0;i<s1.length();i++){
-            arr[i]=s1.substring(0,i+1);
-        }
-        return arr;
-    }
+
 }
